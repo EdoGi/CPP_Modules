@@ -5,22 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/20 00:24:04 by giaco             #+#    #+#              #
-#    Updated: 2022/11/14 01:56:04 by egiacomi         ###   ########.fr        #
+#    Created: 2022/11/13 01:01:51 by egiacomi          #+#    #+#              #
+#    Updated: 2022/11/14 01:32:33 by egiacomi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = motorola
+NAME =	HarlQuiParle
 
-SRCS = 	PhoneBook.cpp	\
-		Contact.cpp		\
-		main.cpp		\
+SRCS =	main.cpp	\
+		Harl.cpp	\
 		\
-
-INCLUDES =	PhoneBook.hpp	\
-			Contact.hpp		\
-			\
-
+		
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++

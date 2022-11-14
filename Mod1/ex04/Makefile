@@ -6,13 +6,14 @@
 #    By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 01:01:51 by egiacomi          #+#    #+#              #
-#    Updated: 2022/11/13 05:05:12 by egiacomi         ###   ########.fr        #
+#    Updated: 2022/11/14 00:38:02 by egiacomi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	transformer
 
-SRCS =	main.cpp	\
+SRCS =	main.cpp		\
+		transformer.cpp \
 		\
 		
 OBJS = ${SRCS:.cpp=.o}
