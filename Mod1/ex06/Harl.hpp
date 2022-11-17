@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 01:06:09 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/17 03:10:21 by egiacomi         ###   ########.fr       */
+/*   Created: 2022/11/17 02:03:18 by egiacomi          #+#    #+#             */
+/*   Updated: 2022/11/17 02:05:43 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <sstream>
+#ifndef _HARL_
+# define _HARL_
 
-int main(int ac, char **av)
+# include <string>
+# include <iostream>
+
+class Harl
 {
-	if(ac == 3)
-	{
-		std::stringstream	conv;
-		int					n;
+	private:
+	
+		void _debug(void) const;
+		void _info(void) const;
+		void _warning(void) const;
+		void _error(void) const;
 		
-		(void)ac;
-		conv << av[1];
-		conv >> n;
-		Zombie *The_Horde = zombieHorde(n, av[2]);
-		for (int i = 0; i < n; i++)
-			The_Horde->announce();
-		delete [] The_Horde;
-	}
-	return 0;
-}
+	public:
+
+		Harl(void);
+		~Harl();
+		void complain(std::string level);
+};
+
+#endif

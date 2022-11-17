@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 03:50:00 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/13 04:56:07 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/17 03:13:37 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class HumanB {
 	private :
 
 		std::string _name;
-		Weapon*		_weapon;
+		Weapon		*_weapon;
 };
 
 #endif

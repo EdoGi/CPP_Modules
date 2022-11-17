@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 01:32:54 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/17 01:49:35 by egiacomi         ###   ########.fr       */
+/*   Created: 2022/11/17 02:11:59 by egiacomi          #+#    #+#             */
+/*   Updated: 2022/11/17 02:59:58 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,31 @@ Harl::~Harl()
 
 void	Harl::complain(std::string level)
 {
-	std::string	match[4] = {"DEBUG", "INFO", " WARNING", "ERROR"};
-	void (Harl::*msg[4])(void) const =	{&Harl::_debug,
-										&Harl::_info,
-										&Harl::_warning,
-										&Harl::_error};
-	for (int i = 0; i < 4; i++)
+	int i;
+	
+	std::string	match[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	for (i = 0; i <= 4; i++)
 	{
 		if (level == match[i])
-		{
-			(this->*msg[i])();
-			return ;
-		}
+			break;
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	switch (i) {
+		case 0:
+			_debug();
+			/* fall through */
+		case 1:
+			_info();
+			/* fall through */
+		case 2:
+			_warning();
+			/* fall through */
+		case 3:
+			_error();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
+	}
 }
 
 void	Harl::_debug(void) const

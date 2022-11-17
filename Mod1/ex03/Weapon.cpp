@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 03:49:38 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/13 05:02:08 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/17 03:15:42 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	Weapon::setType(std::string god_craft)
 
 std::string const &	Weapon::getType(void)
 {
-	std::string& action = this->_type;
+	std::string	&action = this->_type;
 	return action;
 }
