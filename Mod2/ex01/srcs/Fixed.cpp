@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 02:04:03 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/21 04:51:14 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:25:12 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,17 @@ Fixed::Fixed(Fixed const & copy) {
 	*this = copy;
 }
 
+/* 
+	Conversion du Int en Virgule fixe ; On decalle la virgule de _nBits sur la gauche
+*/
 Fixed::Fixed(int const intco) {
 	std::cout << "Int constructor called" << std::endl;
 	this->_RawBits = intco << _nBits;
 }
 
+/* 
+	Conversion du Float en Virgule fixe ; On decalle la virgule de _nBits sur la gauche
+*/
 Fixed::Fixed(float const floatco) {
 	std::cout << "Float constructor called" << std::endl;
 	this->_RawBits = roundf(floatco * (1 << _nBits));
@@ -54,14 +60,25 @@ void Fixed::setRawBits(int const raw) {
 	this->_RawBits = raw;
 }
 
+/* 
+	Conversion Float de Virgule fixe en Virgule flottante; On decalle la virgule de _nBits sur la droite
+*/
 float Fixed::toFloat(void) const {
 	return ((float)this->_RawBits / (float)(1 << _nBits));
 }
 
+/* 
+	Conversion Int de Virgule fixe en Virgule flottante; On decalle la virgule de _nBits sur la droite
+*/
 int Fixed::toInt(void) const {
 	return (this->_RawBits >> _nBits);
 }
 
+/* 	
+	Surcharge de l’opérateur d’insertion («) : 
+	insère une représentation en virgule flottante 
+	du nombre à virgule fixe dans le flux de sortie 
+*/
 std::ostream & operator<<(std::ostream &o, Fixed const & rhs) {
 	o << rhs.toFloat();
 	return (o);

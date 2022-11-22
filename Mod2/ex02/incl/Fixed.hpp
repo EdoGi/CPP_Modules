@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 02:04:11 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/21 05:25:49 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/22 01:27:17 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,20 @@ class Fixed {
 		bool	operator==(Fixed const & rhs) const;
 		bool	operator!=(Fixed const & rhs) const;
 
-		Fixed &	operator+(Fixed const & add) const;
-		Fixed &	operator-(Fixed const & sub) const;
-		Fixed &	operator*(Fixed const & mul) const;
-		Fixed &	operator/(Fixed const & div) const;
-
-		// Fixed &	operator++(Fixed const & assign);
-		// Fixed &	++operator(Fixed const & assign);
-		// Fixed &	operator--(Fixed const & assign);
-		// Fixed &	--operator(Fixed const & assign);
-
+		Fixed operator+(Fixed const & add) const;
+		Fixed operator-(Fixed const & sub) const;
+		Fixed operator*(Fixed const & mul) const;
+		Fixed operator/(Fixed const & div) const;
+		
+		Fixed &	operator++(void);
+		Fixed operator++(int);
+		Fixed &	operator--(void);
+		Fixed operator--(int);
+		static Fixed min(Fixed & lfs, Fixed & rhs);
+		static Fixed min(Fixed const & lfs, Fixed const & rhs);
+		static Fixed max(Fixed & lfs, Fixed & rhs);
+		static Fixed max(Fixed const & lfs, Fixed const & rhs);
+		
 		int	getRawBits(void) const;
 		void setRawBits(int const raw);
 		
