@@ -6,14 +6,14 @@
 #    By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 01:46:37 by egiacomi          #+#    #+#              #
-#    Updated: 2022/11/22 04:03:26 by egiacomi         ###   ########.fr        #
+#    Updated: 2022/11/23 02:17:11 by egiacomi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #				PROGRAMS				#
 #########################################
-NAME = ClapTrap
+NAME = ScavTrap
 
 #########################################
 #				COMMANDS				#
@@ -38,13 +38,16 @@ IFLAGS := -I incl/
 #########################################
 #			FILES PATH					#
 #########################################
-INC_PATH = ./incl/Fixed.hpp
-
+INC_PATH =	./incl/ScavTrap.hpp \
+			./incl/ClapTrap.hpp	\
+			\
+			
 #########################################
 #			SOURCES	FILES				#
 #########################################
-SRCS = 	Fixed.cpp 		\
-		main.cpp		\
+SRCS = 	ClapTrap.cpp 		\
+		ScavTrap.cpp		\
+		main.cpp			\
 		\
 
 SRC	= $(addprefix $(SRCS_DIR),$(SRCS))

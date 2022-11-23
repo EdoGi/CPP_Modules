@@ -1,45 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 04:04:23 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/22 04:18:44 by egiacomi         ###   ########.fr       */
+/*   Created: 2022/11/23 08:57:08 by egiacomi          #+#    #+#             */
+/*   Updated: 2022/11/23 09:03:14 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CLAPTRAP_
-# define _CLAPTRAP_
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 
-class ClapTrap {
+# include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap {
 
 	private :
-		
-		std::string _name;
-		int			_hit;
-		int			_energy;
-		int			_attack;
 
 	public :
 		
-		ClapTrap(void);
-		ClapTrap(ClapTrap const & src);
-		ClapTrap & operator=(ClapTrap const & rhs);
-		~ClapTrap(void);
+		/* DEFAULT & COPY CONSTRUCTORS + DESTRUCTOR */
+		FragTrap(void);
+		FragTrap(FragTrap const & src);
+		~FragTrap(void);
+		
+		/* PARAMETRIC CONSTRUCTOR */
+		FragTrap(std::string const name);
+		
+		/* ASSIGNEMENT OPERATOR OVERLOAD */
+		FragTrap & operator=(FragTrap const & rhs);
 
 		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
+		void highFivesGuys(void);
 		void beRepaired(unsigned int amount);
+		
+		/* ACCESSORS */
 
-		std::string	getName();
-		int	getHit();
-		int	getEnergy();
-		int	getAttack();		
+		/* SETTERS */
+
 };
 
 #endif
