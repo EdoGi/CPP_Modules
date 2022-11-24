@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 08:57:08 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/23 09:03:14 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:19:59 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class FragTrap : public ClapTrap {
 
 		void attack(const std::string& target);
 		void highFivesGuys(void);
-		void beRepaired(unsigned int amount);
 		
 		/* ACCESSORS */
 

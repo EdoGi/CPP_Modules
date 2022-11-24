@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 08:57:17 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/23 09:14:31 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:21:17 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,6 @@ void FragTrap::attack(const std::string& target) {
 	}
 	else
 		std::cout << "FragTrap " << this->_name << " is falling asleep.." << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-	if (this->_energy > 0)
-	{
-		std::cout << "FragTrap " << this->_name << \
-			" is recovering of " << amount << " hit points !" << std::endl;
-		for (unsigned int i = 0; i < amount; i++)
-			this->_hit++;
-	}	
 }
 
 void FragTrap::highFivesGuys(void) {

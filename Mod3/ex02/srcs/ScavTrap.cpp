@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 01:55:51 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/23 08:19:02 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:19:26 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,6 @@ void ScavTrap::attack(const std::string& target) {
 	}
 	else
 		std::cout << "ScavTrap " << this->_name << " has no more energy to fight.." << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-	if (this->_energy > 0)
-	{
-		std::cout << "ScavTrap " << this->_name << \
-			" is recovering of " << amount << " hit points !" << std::endl;
-		for (unsigned int i = 0; i < amount; i++)
-			this->_hit++;
-	}	
 }
 
 void ScavTrap::guardGate() {

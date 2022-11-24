@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 01:55:54 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/23 07:26:03 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:18:50 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class ScavTrap : public ClapTrap {
 
 		void attack(const std::string& target);
 		void guardGate(void);
-		void beRepaired(unsigned int amount);
 		
 		/* ACCESSORS */
 

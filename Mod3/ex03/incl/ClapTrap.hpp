@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 04:04:23 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/23 08:58:21 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:41:59 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <iostream>
 # include <string>
-
-# include "ClapTrap.hpp"
 
 class ClapTrap {
 

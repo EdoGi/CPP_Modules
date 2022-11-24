@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 04:11:45 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/11/23 09:26:03 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:19:17 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (this->_energy > 0 && this->_hit > 0)
 	{
-		std::cout << "ClapTrap " << this->_name << \
-			" is recovering of " << amount << " hit points !" << std::endl;
+		std::cout << this->_name << " is recovering of " << amount << " hit points !" << std::endl;
 		for (unsigned int i = 0; i < amount; i++)
 			this->_hit++;
 	}

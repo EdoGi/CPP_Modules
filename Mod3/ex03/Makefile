@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+         #
+#    By: giaco <giaco@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 01:46:37 by egiacomi          #+#    #+#              #
-#    Updated: 2022/11/23 09:15:10 by egiacomi         ###   ########.fr        #
+#    Updated: 2022/11/24 04:24:02 by giaco            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #				PROGRAMS				#
 #########################################
-NAME = FragTrap
+NAME = DiamondTrap
 
 #########################################
 #				COMMANDS				#
@@ -41,6 +41,7 @@ IFLAGS := -I incl/
 INC_PATH =	./incl/ScavTrap.hpp \
 			./incl/ClapTrap.hpp	\
 			./incl/FragTrap.hpp	\
+			./incl/DiamonTrap.hpp	\
 			\
 			
 #########################################
@@ -49,6 +50,7 @@ INC_PATH =	./incl/ScavTrap.hpp \
 SRCS = 	ClapTrap.cpp 		\
 		ScavTrap.cpp		\
 		FragTrap.cpp		\
+		DiamondTrap.cpp		\
 		main.cpp			\
 		\
 
