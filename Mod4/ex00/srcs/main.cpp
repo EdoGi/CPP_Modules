@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:50:07 by giaco             #+#    #+#             */
-/*   Updated: 2022/11/27 04:15:39 by giaco            ###   ########.fr       */
+/*   Updated: 2022/11/28 23:34:16 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int main()
 	
 	std::cout << "-> Instantiation <-" << std::endl;
 	std::cout << std::endl;	
+	{
+	const Animal yo;
+	}
+	std::cout << std::endl;		
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -31,8 +35,8 @@ int main()
 	std::cout << "-> Get Types ! <-" << std::endl;
 	std::cout << std::endl;
 		
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << "dog is : " << j->getType() << " " << std::endl;
+	std::cout << "cat is : " << i->getType() << " " << std::endl;
 
 	std::cout << std::endl;		
 	std::cout << "-> Make Sounds ! <-" << std::endl;
@@ -71,7 +75,11 @@ int main()
 	
 	WA->makeSound();
 	WC->makeSound(); // Should output WrongAnimal sound
-	
+	std::cout << std::endl;
+	std::cout << "-> This should work <-" << std::endl;	
+	const WrongCat works;	
+	works.makeSound();
+
 	std::cout << std::endl;		
 	std::cout << "-> Destructors ! <-" << std::endl;
 	std::cout << std::endl;

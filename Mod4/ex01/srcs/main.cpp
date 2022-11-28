@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:50:07 by giaco             #+#    #+#             */
-/*   Updated: 2022/11/28 01:34:01 by giaco            ###   ########.fr       */
+/*   Updated: 2022/11/28 23:46:35 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ int main()
 	braintest = assign.getBrain();
 	braintest->setIdea(0, "Je n'aime pas les humains ! rrrrrrr");
 	{
-		std::cout << "Idée 0 Cat Brain Test : " << assign.getBrain()->_ideas[0] << std::endl;	
+		std::cout << "Idée 0 Cat Brain Test : " << assign.getBrain()->getIdeas()[0] << std::endl;	
 		Cat tmp = assign;
 	}
-	std::cout << "Idée 0 Cat Brain Test : " << assign.getBrain()->_ideas[0] << std::endl;	
+	std::cout << "Idée 0 Cat Brain Test : " << assign.getBrain()->getIdeas()[0] << std::endl;	
 	std::cout << std::endl << " # ~~~~~~~~~~~~~~~~~~~~~~ # : Assign Operator check values" << std::endl;
 	assign = origin;
 	std::cout << std::endl << " # ~~~~~~~~~~~~~~~~~~~~~~ # " << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 04:00:21 by giaco             #+#    #+#             */
-/*   Updated: 2022/11/27 23:42:29 by giaco            ###   ########.fr       */
+/*   Updated: 2022/11/28 23:38:19 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class Cat : public Animal
 
 		Cat();
 		Cat( Cat const & src );
-		~Cat();
+		// Pas oblige de rendre ce destructeur virtuel car il sera deja virtuel par heritage
+		virtual ~Cat();
 
 		Cat &		operator=( Cat const & rhs );
 

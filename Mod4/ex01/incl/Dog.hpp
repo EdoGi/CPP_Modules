@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 04:01:33 by giaco             #+#    #+#             */
-/*   Updated: 2022/11/27 05:40:36 by giaco            ###   ########.fr       */
+/*   Updated: 2022/11/28 23:38:28 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Dog : public Animal
 
 		Dog();
 		Dog( Dog const & src );
+		// Pas oblige de rendre ce destructeur virtuel car il sera deja virtuel par heritage
 		~Dog();
 
 		Dog &		operator=( Dog const & rhs );

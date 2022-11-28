@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 04:26:55 by giaco             #+#    #+#             */
-/*   Updated: 2022/11/27 23:51:34 by giaco            ###   ########.fr       */
+/*   Updated: 2022/11/28 23:46:11 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ class Brain
 		std::string	const	*getIdeas() const;
 		void				setIdea(size_t index, std::string arg);
 
-		std::string _ideas[100];
+		private :
+			std::string _ideas[100];
 
 };
 
