@@ -6,14 +6,14 @@
 #    By: giaco <giaco@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 21:48:12 by giaco             #+#    #+#              #
-#    Updated: 2022/11/27 23:55:41 by giaco            ###   ########.fr        #
+#    Updated: 2022/11/27 23:55:32 by giaco            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #				PROGRAMS				#
 #########################################
-NAME = Cats_Dogs
+NAME = Cats_Dogs_Brains
 
 #########################################
 #				COMMANDS				#
@@ -43,6 +43,7 @@ INC_PATH =	./incl/Animal.hpp		\
 			./incl/Cat.hpp			\
 			.incl/WrongCat.cpp		\
 			.incl/WrongAnimal.cpp	\
+			.incl/Brain.hpp			\
 			\
 			
 #########################################
@@ -54,6 +55,7 @@ SRCS = 	Animal.cpp 		\
 		main.cpp		\
 		WrongCat.cpp	\
 		WrongAnimal.cpp	\
+		Brain.cpp		\
 		\
 
 SRC	= $(addprefix $(SRCS_DIR),$(SRCS))
