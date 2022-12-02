@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:41:22 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 03:27:21 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 08:10:21 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Form::Form( const Form & src ) :
 	*this = src;	
 }
 
-Form::Form(std::string name, int gtosign, int gtoexec) : _name(name), _issigned(0), _gtosign(gtosign), _gtoexec(gtoexec)
+Form::Form(std::string const name, int const gtosign, int const gtoexec) : _name(name), _issigned(0), _gtosign(gtosign), _gtoexec(gtoexec)
 {
 	std::cout << "Form Parametric Constructor called : " << BYEL << this->_name << RESET << std::endl;
 	if (gtosign < 1 || gtoexec < 1)

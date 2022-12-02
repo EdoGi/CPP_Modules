@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 01:27:10 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 03:06:34 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 07:58:02 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	Bureaucrat::signForm(Form &form) const
 	if (form.getSigned())
 		std::cout << RED << "Form " + this->_name << " is already signed." << RESET << std::endl;
 	else
-	
+	{
 		try
 		{
 			form.beSigned(*this);
@@ -102,7 +102,7 @@ void	Bureaucrat::signForm(Form &form) const
 			std::cerr << RED << this->_name << " couldn't signed Form " + form.getName();
 			std::cerr << " because " << e.what() << RESET << std::endl;
 		}
-	
+	}
 }
 
 /*

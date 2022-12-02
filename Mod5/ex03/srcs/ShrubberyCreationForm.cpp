@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 03:46:50 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/02 05:01:40 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 08:09:38 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ShrubberyCreationForm::execute(void) const
 	try
 	{
 		ofs.open(filename.c_str(), std::ofstream::out);
-		if (!ofs)
+		if (!ofs || ofs.fail())
 			throw std::exception();
 		ofs << "         wWWWw               wWWWw        " << std::endl;
 		ofs << "   vVVVv (___) wWWWw         (___)  vVVVv " << std::endl;

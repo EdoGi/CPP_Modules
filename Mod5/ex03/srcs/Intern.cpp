@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 05:18:38 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/02 07:41:27 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 08:17:42 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ Form	*Intern::makeForm(std::string formName, std::string targetName) const
 	try
 	{
 		NewForm = createForm(formName, targetName);
+		std::cout << BLUE << "Intern has create " + NewForm->getName() << RESET << std::endl;	
 	}
 	catch(const std::exception &e)
 	{

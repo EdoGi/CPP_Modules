@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:41:32 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 03:42:31 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 08:10:32 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form
 
 		Form();
 		Form( Form const & src );
-		Form(std::string name, int gtosign, int gtoexec);
+		Form(std::string const name, int const gtosign, int const gtoexec);
 		virtual ~Form();
 
 		Form &		operator=( Form const & rhs );
