@@ -6,14 +6,14 @@
 #    By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 21:48:12 by giaco             #+#    #+#              #
-#    Updated: 2022/12/01 23:00:58 by egiacomi         ###   ########.fr        #
+#    Updated: 2022/12/02 04:19:28 by egiacomi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #				PROGRAMS				#
 #########################################
-NAME = Bureaucrat01
+NAME = Bureaucrat02
 
 #########################################
 #				COMMANDS				#
@@ -38,16 +38,22 @@ IFLAGS := -I incl/
 #########################################
 #			FILES PATH					#
 #########################################
-INC_PATH =	./incl/Bureaucrat.hpp		\
-			./incl/Form.hpp				\
+INC_PATH =	./incl/Bureaucrat.hpp				\
+			./incl/Form.hpp						\
+			./incl/ShrubberyCreationForm.hpp	\
+			./incl/PresidentialPardonForm.hpp	\
+			./incl/RobotomyRequestForm.hpp		\
 			\
 			
 #########################################
 #			SOURCES	FILES				#
 #########################################
-SRCS = 	Bureaucrat.cpp 		\
-		Form.cpp			\
-		main.cpp			\
+SRCS = 	Bureaucrat.cpp				\
+		Form.cpp					\
+		main.cpp					\
+		PresidentialPardonForm.cpp	\
+		RobotomyRequestForm.cpp		\
+		ShrubberyCreationForm.cpp	\
 		\
 
 SRC	= $(addprefix $(SRCS_DIR),$(SRCS))

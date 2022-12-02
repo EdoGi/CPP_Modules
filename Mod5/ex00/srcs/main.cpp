@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 01:27:16 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/01 01:30:27 by giaco            ###   ########.fr       */
+/*   Updated: 2022/12/02 03:06:26 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	}
 	catch (std::exception &e)		// Could specify what kind of exception to catch, ex : Bureaucrat::GradeTooLowException& e
 	{
-		  std::cout << RED << e.what() << RESET << std::endl;
+		  std::cerr << RED << e.what() << RESET << std::endl;
 	}
 
 	std::cout << std::endl << BWHT << "\n============ Test Too High Grade to construct ============" << RESET << std::endl;
@@ -31,7 +31,7 @@ int main()
 	}
 	catch (std::exception &e)		// Could specify what kind of exception to catch, ex : Bureaucrat::GradeTooHighException& e
 	{
-		std::cout << RED << e.what() << RESET << std::endl;
+		std::cerr << RED << e.what() << RESET << std::endl;
 	}
 
 	std::cout << std::endl << BWHT << "============ Basic Test  ============" << RESET << std::endl;
@@ -44,7 +44,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		  std::cout << BRED << e.what() << RESET << std::endl;
+		  std::cerr << BRED << e.what() << RESET << std::endl;
 	}
 
 	std::cout << std::endl << BWHT << "============ Test Demote / Promote  ============" << RESET << std::endl;
@@ -59,7 +59,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		  std::cout << BRED << e.what() << RESET << std::endl;
+		  std::cerr << BRED << e.what() << RESET << std::endl;
 	}
 
 	try 
@@ -70,7 +70,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		  std::cout << BRED << e.what() << RESET << std::endl;
+		  std::cerr << BRED << e.what() << RESET << std::endl;
 	}
 	return (0);
 }

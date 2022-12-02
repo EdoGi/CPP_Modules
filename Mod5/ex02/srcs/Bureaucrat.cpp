@@ -6,11 +6,12 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 01:27:10 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 03:06:34 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 03:34:10 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -88,20 +89,30 @@ void	Bureaucrat::decrement(void)
 
 void	Bureaucrat::signForm(Form &form) const
 {
-	if (form.getSigned())
-		std::cout << RED << "Form " + this->_name << " is already signed." << RESET << std::endl;
-	else
-	
-		try
-		{
-			form.beSigned(*this);
-			std::cout << GREEN << this->_name << " signed Form " + form.getName() << RESET << std::endl;
-		} 
-		catch (std::exception& e) 
-		{
-			std::cerr << RED << this->_name << " couldn't signed Form " + form.getName();
-			std::cerr << " because " << e.what() << RESET << std::endl;
-		}
+	try
+	{
+		form.beSigned(*this);
+		std::cout << GREEN << this->_name << " signed Form " + form.getName() << RESET << std::endl;
+	} 
+	catch (std::exception& e) 
+	{
+		std::cerr << RED << this->_name << " couldn't sign Form " + form.getName();
+		std::cerr << " because " << BRED << e.what() << RESET << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(Form const & form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << GREEN << this->_name << " has executed Form " + form.getName() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << RED << this->_name << " couldn't execute Form " + form.getName();
+		std::cerr << " because " << BRED << e.what() << RESET << std::endl;
+	}
 	
 }
 

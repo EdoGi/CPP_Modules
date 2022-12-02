@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:41:22 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 01:06:09 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 03:27:21 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,8 @@ Form::Form(std::string name, int gtosign, int gtoexec) : _name(name), _issigned(
 	std::cout << "Form Parametric Constructor called : " << BYEL << this->_name << RESET << std::endl;
 	if (gtosign < 1 || gtoexec < 1)
 		throw Bureaucrat::GradeTooHighException();
-	if (gtosign > 150 || gtoexec > 150 )
-	{
+	else if (gtosign > 150 || gtoexec > 150 )
 		throw Bureaucrat::GradeTooLowException();
-	}
 	else	
 	{
 		std::cout << "- To sign : " << BYEL << this->_gtosign << RESET << std::endl;
@@ -95,11 +93,28 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 void		Form::beSigned(Bureaucrat const &SignedBy)
 {
 	int grade_b = SignedBy.getGrade();
-
-	if (grade_b > this->_gtosign)
+	
+	if (this->_issigned)
+		throw Form::AlreadySignedException();
+	else if (grade_b > this->_gtosign)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_issigned = 1;
+}
+
+void	Form::execute(Bureaucrat const & executor) const
+{
+	int grade_b = executor.getGrade();
+
+	if (this->_issigned)
+	{
+		if (grade_b > this->_gtoexec)
+			throw Bureaucrat::GradeTooLowException();
+		else
+			execute();
+	}
+	else
+		throw Form::UnsignedException();
 }
 
 /*
@@ -124,6 +139,20 @@ int	Form::getGtoExec() const
 bool	Form::getSigned() const
 {
 	return (this->_issigned);
+}
+
+/*
+** -------------------------------- EXCEPTIONS --------------------------------
+*/
+
+const char* Form::UnsignedException::what() const throw()
+{
+	return ("Form was not Signed before Execution trial");
+}
+
+const char* Form::AlreadySignedException::what() const throw()
+{
+	return ("Form has already been signed");
 }
 
 /* ************************************************************************** */

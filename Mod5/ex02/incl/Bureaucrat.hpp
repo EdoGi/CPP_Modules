@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 01:27:12 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 00:07:58 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 03:17:50 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ class Bureaucrat
 		int			getGrade() const;
 		void		increment();
 		void		decrement();
+		
 		void		signForm(Form &form) const;
-
+		
+		void		executeForm(Form const & form) const;
+		
 		class GradeTooHighException : public std::exception
 		{
 			public :
@@ -57,7 +60,5 @@ class Bureaucrat
 };
 
 std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i );
-
-# include "Form.hpp"
 
 #endif /* ****************************************************** BUREAUCRAT_H */
