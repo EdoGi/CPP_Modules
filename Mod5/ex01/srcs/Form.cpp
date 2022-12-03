@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:41:22 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 01:06:09 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 10:34:28 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ Form::Form(std::string name, int gtosign, int gtoexec) : _name(name), _issigned(
 {
 	std::cout << "Form Parametric Constructor called : " << BYEL << this->_name << RESET << std::endl;
 	if (gtosign < 1 || gtoexec < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	if (gtosign > 150 || gtoexec > 150 )
 	{
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	}
 	else	
 	{
@@ -97,7 +97,7 @@ void		Form::beSigned(Bureaucrat const &SignedBy)
 	int grade_b = SignedBy.getGrade();
 
 	if (grade_b > this->_gtosign)
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	else
 		this->_issigned = 1;
 }
@@ -124,6 +124,20 @@ int	Form::getGtoExec() const
 bool	Form::getSigned() const
 {
 	return (this->_issigned);
+}
+
+/*
+** -------------------------------- EXCEPTIONS --------------------------------
+*/
+
+const char * Form::GradeTooHighException::what() const throw()
+{
+	return ("Form Grade is too high");
+}
+
+const char * Form::GradeTooLowException::what() const throw()
+{
+	return ("Form Grade is too low.");
 }
 
 /* ************************************************************************** */

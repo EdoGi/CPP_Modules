@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:41:22 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 08:10:21 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 10:35:51 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ Form::Form(std::string const name, int const gtosign, int const gtoexec) : _name
 {
 	std::cout << "Form Parametric Constructor called : " << BYEL << this->_name << RESET << std::endl;
 	if (gtosign < 1 || gtoexec < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	else if (gtosign > 150 || gtoexec > 150 )
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	else	
 	{
 		std::cout << "- To sign : " << BYEL << this->_gtosign << RESET << std::endl;
@@ -97,7 +97,7 @@ void		Form::beSigned(Bureaucrat const &SignedBy)
 	if (this->_issigned)
 		throw Form::AlreadySignedException();
 	else if (grade_b > this->_gtosign)
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	else
 		this->_issigned = 1;
 }
@@ -153,6 +153,16 @@ const char* Form::UnsignedException::what() const throw()
 const char* Form::AlreadySignedException::what() const throw()
 {
 	return ("Form has already been signed");
+}
+
+const char * Form::GradeTooHighException::what() const throw()
+{
+	return ("Form Grade is too high");
+}
+
+const char * Form::GradeTooLowException::what() const throw()
+{
+	return ("Form Grade is too low.");
 }
 
 /* ************************************************************************** */

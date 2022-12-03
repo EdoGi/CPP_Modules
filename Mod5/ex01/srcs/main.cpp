@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 00:46:23 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/02 03:06:47 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:45:33 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 	std::cout << std::endl << BWHT << "============ [Form 📝] Test Grade to Construct  ============" << RESET << std::endl;
 	try 
 	{
-		Form	Boring("Boring", 160, 1); // WRONG : SignGrade to high
+		Form	Boring("Boring", 160, 1); // WRONG : SignGrade to low
 	}
 	catch (std::exception &e)
 	{
@@ -28,7 +28,7 @@ int	main(void)
 
 	try 
 	{
-		Form	Boring("Boring", 2, -8); // WRONG : ExecGrade to low
+		Form	Boring("Boring", 2, -8); // WRONG : ExecGrade to high
 	}
 	catch (std::exception &e)
 	{

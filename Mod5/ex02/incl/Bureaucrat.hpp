@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 01:27:12 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 08:03:00 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:36:55 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Bureaucrat
 		int			getGrade() const;
 		void		increment();
 		void		decrement();
-		
+
 		void		signForm(Form &form) const;
 		
 		void		executeForm(Form const & form) const;

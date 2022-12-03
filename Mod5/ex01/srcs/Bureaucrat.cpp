@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 01:27:10 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 07:58:02 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:36:28 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,12 +125,12 @@ int			Bureaucrat::getGrade() const
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too Low ! (smaller than 1)");
+	return ("Grade is too Low ! (bigger than 150)");
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too High ! (bigger than 150)");
+	return ("Grade is too High ! (smaller than 1)");
 }
 
 /* ************************************************************************** */

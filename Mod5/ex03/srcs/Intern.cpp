@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 05:18:38 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/02 08:17:42 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 08:30:50 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,13 @@ Form	*createForm(std::string name, std::string target)
 	}
 	switch (i) {
 		case 0:
-			NewForm = new RobotomyRequestForm(target);
-			break;
+			NewForm = new RobotomyRequestForm(target); break;
 		case 1:
-			NewForm = new PresidentialPardonForm(target);
-			break;
+			NewForm = new PresidentialPardonForm(target); break;
 		case 2:
-			NewForm = new ShrubberyCreationForm(target);
-			break;
+			NewForm = new ShrubberyCreationForm(target); break;
 		default:
-			throw Intern::AbsentFormException();
-			break;
+			throw Intern::AbsentFormException(); break;
 	}
 	return (NewForm);
 }

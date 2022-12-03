@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:41:32 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 08:03:57 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 10:27:36 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,18 @@ class Form
 				virtual const char* what() const throw();
 		};	
 				
+		class GradeTooHighException : public std::exception
+		{
+			public :
+				virtual const char* what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public :
+				virtual const char* what() const throw();
+		};	
+		
 	private:
 
 		std::string const	_name;

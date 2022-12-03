@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 00:46:23 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/02 07:45:09 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:50:45 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int	main(void)
 	std::cout << BWHT << "\n================== 💼 Bureaucrat - 📝 Form - 🖨️  Intern  ====================" << RESET << std::endl;
 	std::cout << "------------------ Constructors ------------------" << std::endl;
 	Bureaucrat	JeanMierre("JeanMierre", 5);
-	Intern		Hugo;
+	Intern		Felicien;
 	Form		*form;
 	
 	std::cout << std::endl;
 	std::cout << "\n------------------ 🌳 Shrubbery Creation Forms 🌳 ------------------" << std::endl;
 	try
 	{
-		form = Hugo.makeForm("ShrubberyCreation", "forest");
+		form = Felicien.makeForm("ShrubberyCreation", "forest");
 		std::cout << *form << std::endl;
 		JeanMierre.signForm(*form);
 		JeanMierre.executeForm(*form);
@@ -42,7 +42,7 @@ int	main(void)
 	std::cout << "\n------------------ 🤖 Robotomy Creation Forms 🤖 ------------------" << std::endl;
 	try
 	{
-		form = Hugo.makeForm("RobotomyRequest", "Wall-E");
+		form = Felicien.makeForm("RobotomyRequest", "Wall-E");
 		std::cout << *form << std::endl;
 		JeanMierre.signForm(*form);
 		JeanMierre.executeForm(*form);
@@ -56,7 +56,7 @@ int	main(void)
 	std::cout << "\n------------------ 👨‍💼 Presidental Creation Forms 👨‍💼 ------------------" << std::endl;
 	try
 	{
-		form = Hugo.makeForm("PresidentialPardon", "Trump");
+		form = Felicien.makeForm("PresidentialPardon", "Trump");
 		std::cout << *form << std::endl;
 		JeanMierre.signForm(*form);
 		JeanMierre.executeForm(*form);
@@ -70,7 +70,7 @@ int	main(void)
 	std::cout << "\n------------------ Wrong Form ------------------" << std::endl;
 	try
 	{
-		form = Hugo.makeForm("WrongForm", "Johny");
+		form = Felicien.makeForm("WrongForm", "Johny");
 		std::cout << *form << std::endl;
 		JeanMierre.signForm(*form);
 		JeanMierre.executeForm(*form);

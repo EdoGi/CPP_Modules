@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:41:32 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/02 07:54:36 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/02 10:27:15 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,18 @@ class Form
 		int			getGtoExec() const;
 	
 		void		beSigned(Bureaucrat const &SignedBy);
+
+		class GradeTooHighException : public std::exception
+		{
+			public :
+				virtual const char* what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public :
+				virtual const char* what() const throw();
+		};		
 		
 	private:
 
