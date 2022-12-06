@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 05:43:53 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/06 08:06:57 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/06 08:26:40 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ class Span
 		void	addNumber(int value);
 		void	addPlageNumber(unsigned int plage);
 		void	addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-		int		shortestSpan();
-		int		longestSpan();
-		void	print_table();
+		unsigned int	shortestSpan() const;
+		unsigned int	longestSpan() const;
+		void	print_table() const;
 		
 	private:
 

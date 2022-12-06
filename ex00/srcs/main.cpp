@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 04:44:17 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/06 06:13:13 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/06 08:18:31 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
 	srand(time(0));
 	std::cout << BWHT<< "\n\n================= Int List ===============" << RESET << std::endl;
 	std::list<int> listInt;
-	std::cout << "\n*~~~~~~~~~~~~~~ 5 Random Numbers ~~~~~~~~~~~~~~*" << std::endl;
+	std::cout << "\n*~~~~~~~~~~~~~~ 30 Random Numbers ~~~~~~~~~~~~~~*" << std::endl;
 	int value;
 	for(int i = 0; i < 30; ++i)
 	{

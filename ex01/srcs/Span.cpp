@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 05:43:40 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/06 08:06:52 by egiacomi         ###   ########.fr       */
+/*   Updated: 2022/12/06 08:27:00 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ Span &				Span::operator=( Span const & rhs )
 		this->table.insert(begin, end);
 	}
 
-	int		Span::shortestSpan()
+	unsigned int	Span::shortestSpan() const
 	{
 		if (this->table.empty() || this->table.size() < 2)
 			throw std::runtime_error("Not enough value to check for a Span !");
@@ -101,7 +101,7 @@ Span &				Span::operator=( Span const & rhs )
 		return (shortspan);
 	}
 	
-	int		Span::longestSpan()
+	unsigned int	Span::longestSpan() const
 	{
 		if (this->table.empty() || this->table.size() < 2)
 			throw std::runtime_error("Not enough value to check for a Span !");
@@ -110,7 +110,7 @@ Span &				Span::operator=( Span const & rhs )
 		return (*itlast - *itbeg);
 	}
 		
-	void	Span::print_table()
+	void	Span::print_table() const
 	{
 		std::multiset<int>::iterator it = this->table.begin();
 		std::cout << "SIZE IS : " << this->table.size() << '\n';
