@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 01:37:59 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/05 14:02:36 by giaco            ###   ########.fr       */
+/*   Updated: 2022/12/06 01:53:06 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ITER_HPP
 
 # include "colors.hpp"
+# include <cstdlib>
 # include <iostream>
 
 template< typename T>
