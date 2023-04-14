@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 01:16:04 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/05 19:37:21 by giaco            ###   ########.fr       */
+/*   Updated: 2023/04/14 11:15:04 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void)
 	Array<int>	intCopy(intArray);
 	std::cout << std::endl << UCYN << "Int Copy infos:" << RESET << std::endl;
 	std::cout << intCopy;
-	std::cout << "Value at a valid index: [0] = " << intCopy[1] << std::endl;
+	std::cout << "Value at a valid index: [1] = " << intCopy[1] << std::endl;
 	std::cout << "Value at a unvalid index: [5] = ";
 	try 
 	{
@@ -92,7 +92,7 @@ int	main(void)
 	Array<std::string>	strCopy(strArray);
 	std::cout << std::endl << UCYN << "Str Copy infos:" << RESET << std::endl;
 	std::cout << strCopy;
-	std::cout << "Value at a valid index: [0] = " << strCopy[2] << std::endl;
+	std::cout << "Value at a valid index: [2] = " << strCopy[2] << std::endl;
 	std::cout << "Value at a unvalid index: [5] = ";
 	try 
 	{

@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:04:10 by giaco             #+#    #+#             */
-/*   Updated: 2022/12/06 01:53:20 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/04/14 11:16:55 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ Array<T> &		Array<T>::operator=(Array<T> const & rhs)
 	std::cout << BPUR << "Assign Overload Called" << RESET << '\n';
 	if (this != &rhs)
 	{
-		if (this->_elements)
-			delete [] this->_elements;
+		// if (this->_elements)
+		// 	delete [] this->_elements;
 		this->_elements = new T[rhs.size()];
 		this->_size = rhs.size();
 		for (unsigned int i = 0; i < this->_size; i++)
