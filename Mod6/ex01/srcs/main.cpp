@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:23:39 by egiacomi          #+#    #+#             */
-/*   Updated: 2022/12/04 03:07:36 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:25:46 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main ()
 	
 	std::cout << "ptr2 has word is " << BYEL <<  ptr2->word << RESET;
 	std::cout << " and value : " << BYEL << ptr2->value << RESET << std::endl;
-	std::cout << "ptr2 address : " << BYEL << &ptr2 << RESET << std::endl;
+	std::cout << "ptr2 address : " << BYEL << ptr2 << RESET << std::endl;
 
 	return 0;
 }
