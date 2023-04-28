@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:13 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/28 15:34:02 by giaco            ###   ########.fr       */
+/*   Updated: 2023/04/28 18:53:45 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 */
 
 #include "BitcoinExchange.hpp"
+# include <iostream>
 
 # define FILE_PATH "./data.csv"
 
@@ -41,12 +42,12 @@ void print_btc_prices(std::map<Date, float> btcsv)
 	}
 }
 
-std::ifstream file_opener(const char* file_name)
+void file_opener(BitcoinExchange &btc_exc, std::string filename)
 {
-    std::ifstream inputFile(file_name);
-    if (!inputFile.is_open() || inputFile.fail()) 
+
+	btc_exc.ifs.open(filename.c_str());
+    if (!btc_exc.ifs.is_open() || btc_exc.ifs.fail()) 
         throw std::runtime_error(std::string("Error opening file ") + FILE_PATH);
-    return inputFile;
 }
 
 void	csv_parser(BitcoinExchange *btc_exc)
@@ -98,7 +99,7 @@ void	input_parser(BitcoinExchange *btc_exc)
 			ss >> btc_exc->amount;
 			if (btc_exc->amount < 0)
 				std::cerr << "Invalid negative amount" << std::endl;
-			else if (btc_exc->amount >= INT_MAX)
+			else if (btc_exc->amount >= 1000)
 				std::cerr << "Invalid max size" << std::endl;
 			else
 			{
@@ -146,7 +147,7 @@ int main(int ac, char **av)
 	BitcoinExchange btc_exc;
 	try
 	{
-		btc_exc.ifs = file_opener(FILE_PATH);
+		file_opener(btc_exc, FILE_PATH);
 		csv_parser(&btc_exc);
 		btc_exc.ifs.close();
 	}
@@ -158,7 +159,7 @@ int main(int ac, char **av)
 	
 	try
 	{
-		btc_exc.ifs = file_opener(av[1]);
+		file_opener(btc_exc, av[1]);
 		input_parser(&btc_exc);
 		btc_exc.ifs.close();
 	}

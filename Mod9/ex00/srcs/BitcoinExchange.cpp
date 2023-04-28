@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:10 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/28 14:49:35 by giaco            ###   ########.fr       */
+/*   Updated: 2023/04/28 20:57:10 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const & src)
 	*this = src;
 }
 
-BitcoinExchange::BitcoinExchange(std::string date, float rate) : _date(date), _BitRate(rate)
+BitcoinExchange::BitcoinExchange(std::map<std::string, float> BitMap) : _BitExMap(BitMap)
 {
 }
 
@@ -32,19 +32,42 @@ BitcoinExchange::~BitcoinExchange()
 BitcoinExchange & BitcoinExchange::operator=(BitcoinExchange const & rhs)
 {
 	if (this != &rhs)
-	{
-		this->_date = rhs._date;
-		this->_BitRate = rhs._BitRate;
-	}
+		this->_BitExMap = rhs._BitExMap;
 	return *this;
 }
 
-std::string	BitcoinExchange::getDate() const
+std::map<std::string, float> BitcoinExchange::getMap() const
 {
-	return this->_date;
+	return this->_BitExMap;
 }
 
-float	BitcoinExchange::getBitRate() const
+void	BitcoinExchange::printMap(std::map<std::string, float> const & BitMap)
 {
-	return this->_BitRate;	
+	std::map<std::string, float>::const_iterator it = BitMap.begin();
+	while (it != BitMap.end())
+	{
+	    std::cout << std::fixed << std::setprecision(2);
+		std::cout << it->first << " - " << it->second << std::endl;
+		it++;
+	}	
+}
+
+void  BitcoinExchange::fillBitExMap(BitcoinExchange & Bitcoin)
+{
+	std::ifstream ifs(FILE_PATH);
+	if (!ifs.is_open() || ifs.fail())
+        throw std::runtime_error(std::string("Error opening file : ") + FILE_PATH);
+
+	std::string line;
+	while (std::getline(ifs, line))
+	{
+		std::istringstream ss(line);
+		std::string date;
+		float value;
+		std::getline(ss, date, ',');
+		ss >> value;
+		Bitcoin._BitExMap.insert(std::make_pair(date, value));
+	}
+	printMap(Bitcoin._BitExMap);
+	ifs.close();
 }
