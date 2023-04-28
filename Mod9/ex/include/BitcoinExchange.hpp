@@ -6,7 +6,7 @@
 /*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:01 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/28 14:43:55 by giaco            ###   ########.fr       */
+/*   Updated: 2023/04/28 02:17:08 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,34 @@
 # include <ctime>
 # include <map>
 
+typedef struct 	s_Date
+{
+	int	year;
+	int	month;
+	int	day;
+	
+	bool operator<(const s_Date& other) const {
+        if (year != other.year) {
+            return year < other.year;
+        } else if (month != other.month) {
+            return month < other.month;
+        } else {
+            return day < other.day;
+        }
+    }
+}				Date;
+
 class BitcoinExchange
 {
-	private:
-		std::string	_date;
-		float		_BitRate;
-		
-	public:
-		BitcoinExchange();
-		BitcoinExchange(BitcoinExchange const & src);
-		~BitcoinExchange();
-		
-		BitcoinExchange(std::string date, float rate);
-		
-		BitcoinExchange & operator=(BitcoinExchange const & rhs);
+private:
 
-		std::string getDate() const;
-		float		getBitRate() const;
+public:
+	std::map<Date, float> btc_prices;
+	std::ifstream ifs;
+	float	amount;
+	BitcoinExchange();
+	~BitcoinExchange();
+	
 };
 
 #endif
