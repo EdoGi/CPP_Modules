@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:10 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/28 20:57:10 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:06:44 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	BitcoinExchange::printMap(std::map<std::string, float> const & BitMap)
 void  BitcoinExchange::fillBitExMap(BitcoinExchange & Bitcoin)
 {
 	std::ifstream ifs(FILE_PATH);
-	if (!ifs.is_open() || ifs.fail())
+	if (!ifs.is_open() || ifs.fail() || ifs.peek() == EOF)
         throw std::runtime_error(std::string("Error opening file : ") + FILE_PATH);
 
 	std::string line;

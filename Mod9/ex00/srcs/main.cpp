@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:13 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/28 20:49:19 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:07:43 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,29 @@
 void	findBitVal(std::string filename, BitcoinExchange const & Bitcoin)
 {
 	std::ifstream ifs(filename.c_str());
-	(void) Bitcoin;
+	if (!ifs.is_open() || ifs.fail() || ifs.peek() == EOF)
+        throw std::runtime_error(std::string("Error opening file : ") + filename);
+	
+	std::string line;
+	while (std::getline(ifs, line))
+	{
+		std::istringstream ss(line);
+		std::string date;
+		float value;
+		
+		std::getline(ss, date, '|');
+		date.substr();
+		ss >> value;
+		
+		// Bitcoin._BitExMap.insert(std::make_pair(date, value));
+	}
+	// printMap(Bitcoin._BitExMap);
+	ifs.close();
 }
+// std::size_t found = str.find_last_not_of(" ");
+// if (found != std::string::npos) {
+//     str = str.substr(0, found + 1);
+// }
 
 
 int	main(int ac, char **av)
