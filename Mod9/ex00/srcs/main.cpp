@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:13 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/29 04:21:58 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/04/29 05:11:19 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 	OK - Read Input.txt
 	OK - Tokenise Input.txt (Date | Amount)
 	OK - Dell spaces
-	- Count Value (Amount * Value)
-	- Display result
-	- ADD const fct
+	OK - Count Value (Amount * Value)
+	OK - Display result
+	OK - ADD const fct
 
-	- Check error and special cases (non existing date, unpossible date, ...)
+	OK - Check error and special cases (non existing date, unpossible date, ...)
 	
 	OK - Check empty line for output ; invalid date
 	OK - scanf not 3

@@ -6,14 +6,14 @@
 #    By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 21:48:12 by giaco             #+#    #+#              #
-#    Updated: 2023/04/29 04:40:00 by egiacomi         ###   ########.fr        #
+#    Updated: 2023/04/29 04:40:41 by egiacomi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #########################################
 #				PROGRAMS				#
 #########################################
-NAME = btc
+NAME = RPN
 
 #########################################
 #				COMMANDS				#
@@ -45,7 +45,7 @@ IFLAGS := -I include/
 #			SOURCES	FILES				#
 #########################################
 SRCS =	main.cpp			\
-		BitcoinExchange.cpp \
+		RPN.cpp \
 		\
 
 SRC	= $(addprefix $(SRCS_DIR),$(SRCS))
@@ -74,12 +74,11 @@ all : ${NAME}
 
 ${OBJ_DIR}%.o : ${SRCS_DIR}%.cpp
 	@$(MKDIR) $(@D)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $@ $<
-
+	$(CC) $(CFLAGS) $(IFLAGS) -o $@ $< 
 	
 $(NAME) : $(OBJS)
 	@echo $(CYAN) " - Compiling $@" $(RED)
-	@$(CC) $^ -o $@ 
+	@$(CC) $^ -o $@
 	@echo $(GREEN) "[OK COMPILED]" $(EOC) "- $(NAME) created"
 
 clean :
