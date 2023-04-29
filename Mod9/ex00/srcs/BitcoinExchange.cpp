@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:10 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/28 21:06:44 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/04/29 04:11:59 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	BitcoinExchange::printMap(std::map<std::string, float> const & BitMap)
 	}	
 }
 
-void  BitcoinExchange::fillBitExMap(BitcoinExchange & Bitcoin)
+void BitcoinExchange::fillBitExMap(BitcoinExchange & Bitcoin)
 {
 	std::ifstream ifs(FILE_PATH);
 	if (!ifs.is_open() || ifs.fail() || ifs.peek() == EOF)
@@ -68,6 +68,6 @@ void  BitcoinExchange::fillBitExMap(BitcoinExchange & Bitcoin)
 		ss >> value;
 		Bitcoin._BitExMap.insert(std::make_pair(date, value));
 	}
-	printMap(Bitcoin._BitExMap);
+	// printMap(Bitcoin._BitExMap);
 	ifs.close();
 }

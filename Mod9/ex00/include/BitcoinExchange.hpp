@@ -6,7 +6,7 @@
 /*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:01 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/28 20:57:04 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/04/29 04:19:39 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@
 # include <iomanip>
 # include <fstream>
 # include <sstream>
-// # include <string>
-// # include <cstring>
-// # include <cstdio>
-// # include <ctime>
+# include <cstring>
+# include <ctime>
+# include <cctype>
 # include <map>
 
 class BitcoinExchange
