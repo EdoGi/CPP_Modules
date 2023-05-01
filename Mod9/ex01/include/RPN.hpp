@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:41:47 by egiacomi          #+#    #+#             */
-/*   Updated: 2023/04/29 05:10:26 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/05/01 23:27:31 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,37 +19,34 @@
 # include <iostream>
 // # include <iomanip>
 // # include <fstream>
-// # include <sstream>
+# include <sstream>
 # include <cstring>
 // # include <ctime>
-// # include <cctype>
 # include <stack>
 
 class RPN
 {
 	private:
-		std::stack<int> equation;
-		int				a;
-		int				b;
+		std::stack<int> _polish;
+		std::string		_rpn;
+		int				_result;
+		// int				a;
+		// int				b;
 		
 	public:
 		RPN();
 		RPN(RPN const & src);
-		RPN(std::string eq);
 		~RPN();
+		
+		RPN(std::string polish);
+		
 		RPN & operator=(RPN const & rhs);
+		
+		std::string getRPN() const;
+		int getResult() const;
+		void calculOperator(std::string token);
 };
 
-RPN::RPN()
-{
-}
-
-RPN::RPN(std::string eq)
-{
-}
-
-RPN::~RPN()
-{
-}
+std::ostream & operator<<( std::ostream & o, RPN const & i );
 
 #endif
