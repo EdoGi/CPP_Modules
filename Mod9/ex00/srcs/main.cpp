@@ -3,32 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:13 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/29 05:11:19 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/05/05 18:28:54 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* 
-	TODO :
-	OK - Read CSV
-	OK - Tokenise CSV in Map Container (Date | Value)
-	OK - Read Input.txt
-	OK - Tokenise Input.txt (Date | Amount)
-	OK - Dell spaces
-	OK - Count Value (Amount * Value)
-	OK - Display result
-	OK - ADD const fct
-
-	OK - Check error and special cases (non existing date, unpossible date, ...)
-	
-	OK - Check empty line for output ; invalid date
-	OK - scanf not 3
-	OK - Check invalid date
-	OK - Check invalid amount (<0 or >1000)
-	
-*/
 
 #include "BitcoinExchange.hpp"
 
