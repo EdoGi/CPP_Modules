@@ -6,7 +6,7 @@
 /*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:13 by giaco             #+#    #+#             */
-/*   Updated: 2023/05/05 18:28:54 by giaco            ###   ########.fr       */
+/*   Updated: 2023/05/15 15:11:10 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,10 @@ void	findBitVal(std::string const filename, BitcoinExchange const & Bitcoin)
 {
 	std::ifstream ifs(filename.c_str());
 	if (!ifs.is_open() || ifs.fail() || ifs.peek() == EOF)
-        throw std::runtime_error(std::string("Error opening file : ") + filename);
-	
+    {
+        ifs.close();
+		throw std::runtime_error(std::string("Error opening file : ") + filename);
+	}
 	std::string line;
 	std::string date;
 	float amount;

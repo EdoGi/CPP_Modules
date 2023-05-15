@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:10 by giaco             #+#    #+#             */
-/*   Updated: 2023/04/29 04:11:59 by egiacomi         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:10:58 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,10 @@ void BitcoinExchange::fillBitExMap(BitcoinExchange & Bitcoin)
 {
 	std::ifstream ifs(FILE_PATH);
 	if (!ifs.is_open() || ifs.fail() || ifs.peek() == EOF)
-        throw std::runtime_error(std::string("Error opening file : ") + FILE_PATH);
-
+	{
+        ifs.close();
+		throw std::runtime_error(std::string("Error opening file : ") + FILE_PATH);
+	}
 	std::string line;
 	while (std::getline(ifs, line))
 	{
