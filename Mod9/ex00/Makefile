@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+         #
+#    By: giaco <giaco@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 21:48:12 by giaco             #+#    #+#              #
-#    Updated: 2023/04/29 04:40:00 by egiacomi         ###   ########.fr        #
+#    Updated: 2023/05/15 14:45:28 by giaco            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,15 +31,14 @@ OBJ_DIR = objs/
 #########################################
 #			FLAGS COMPILATION			#
 #########################################
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -c -MMD -MP
-# CFLAGS += -fsanitize=address  -Wno-unused
-# -L/usr/lib/x86_64-linux-gnu/ -lasan -> Add this end of line : `@$(CC) $^ -o $@`
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -MP
+CFLAGS += -g3 -fsanitize=address -Wno-unused
 IFLAGS := -I include/
 
 #########################################
 #			FILES PATH					#
 #########################################
-# INC_PATH = ./include/BitcoinExchange.hpp
+INC_PATH = ./include/BitcoinExchange.hpp
 			
 #########################################
 #			SOURCES	FILES				#
@@ -74,12 +73,12 @@ all : ${NAME}
 
 ${OBJ_DIR}%.o : ${SRCS_DIR}%.cpp
 	@$(MKDIR) $(@D)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<
 
 	
 $(NAME) : $(OBJS)
 	@echo $(CYAN) " - Compiling $@" $(RED)
-	@$(CC) $^ -o $@ 
+	@$(CC) $(CFLAGS) $(OBJS) $(IFLAGS) -o $@ 
 	@echo $(GREEN) "[OK COMPILED]" $(EOC) "- $(NAME) created"
 
 clean :

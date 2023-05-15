@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+         #
+#    By: giaco <giaco@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/26 21:48:12 by giaco             #+#    #+#              #
-#    Updated: 2023/04/29 04:40:41 by egiacomi         ###   ########.fr        #
+#    Created: 2023/05/15 14:30:58 by giaco             #+#    #+#              #
+#    Updated: 2023/05/15 14:42:59 by giaco            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = RPN
 #########################################
 #				COMMANDS				#
 #########################################
-CC = c++
+CXX = c++
 MKDIR =	mkdir -p
 RM = rm -rf
 
@@ -31,30 +31,29 @@ OBJ_DIR = objs/
 #########################################
 #			FLAGS COMPILATION			#
 #########################################
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -c -MMD -MP
-# CFLAGS += -fsanitize=address  -Wno-unused
-# -L/usr/lib/x86_64-linux-gnu/ -lasan -> Add this end of line : `@$(CC) $^ -o $@`
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -MMD -MP
+CXXFLAGS += -g3 -fsanitize=address -Wno-unused
 IFLAGS := -I include/
 
 #########################################
 #			FILES PATH					#
 #########################################
-# INC_PATH = ./include/BitcoinExchange.hpp
-			
+INC_PATH = ./include/RPN.hpp
+
 #########################################
 #			SOURCES	FILES				#
 #########################################
-SRCS =	main.cpp			\
-		RPN.cpp \
+SRCS = 	main.cpp 		\
+		RPN.cpp	\
 		\
-
+	
 SRC	= $(addprefix $(SRCS_DIR),$(SRCS))
 
 #########################################
 #            OBJECT FILES    	        #
 #########################################
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
-DEPS = ${OBJS:.o=.d}
+DEPS = $(OBJS:.o=.d)
 
 #########################################
 #				COLORS					#
@@ -68,28 +67,30 @@ EOC		:="\033[0;0m"
 #########################################
 #				RULES					#
 #########################################
-all : ${NAME}
+all:	${NAME}
 
--include ${DEPS}
+# allows to include all dependencies files created
+# in case 
+-include $(DEPS) 
 
 ${OBJ_DIR}%.o : ${SRCS_DIR}%.cpp
 	@$(MKDIR) $(@D)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $@ $< 
-	
-$(NAME) : $(OBJS)
+	$(CXX) $(CXXFLAGS) $(IFLAGS) -o $@ -c $< 
+
+$(NAME): $(OBJS)
 	@echo $(CYAN) " - Compiling $@" $(RED)
-	@$(CC) $^ -o $@
-	@echo $(GREEN) "[OK COMPILED]" $(EOC) "- $(NAME) created"
+	@$(CXX) $(CXXFLAGS) $(OBJS) $(IFLAGS) -o $(NAME)  
+	@echo $(GREEN) "[OK COMPILED]" $(EOC)
 
-clean :
-	@echo $(PURPLE) "[🧹Cleaning...🧹]" $(EOC)
-	@${RM} ${OBJS}
-	@${RM} ${OBJ_DIR}
-	
-fclean : clean
-	@echo $(PURPLE) "[🧹FCleaning...🧹]" $(EOC)
-	@${RM} ${NAME}
+clean:
+		@echo $(PURPLE) "[🧹Cleaning...🧹]" $(EOC)
+		@${RM} ${OBJS}
+		@${RM} ${OBJ_DIR}
 
-re : fclean all
+fclean: clean
+		@echo $(PURPLE) "[🧹FCleaning...🧹]" $(EOC)
+		@${RM} ${NAME}
 
-.PHONY : clean fclean re
+re: 	fclean all
+
+.PHONY: all clean fclean re

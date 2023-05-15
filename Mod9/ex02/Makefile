@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: giaco <giaco@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/15 14:30:58 by giaco             #+#    #+#              #
+#    Updated: 2023/05/15 14:38:26 by giaco            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #########################################
 #				PROGRAMS				#
 #########################################
@@ -20,7 +32,7 @@ OBJ_DIR = objs/
 #			FLAGS COMPILATION			#
 #########################################
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -MMD -MP
-# CXXFLAGS += -fsanitize=address -Wno-unused
+CXXFLAGS += -g3 -fsanitize=address -Wno-unused
 IFLAGS := -I incl/
 
 #########################################
@@ -31,8 +43,9 @@ INC_PATH = ./incl/PmergeMe.hpp
 #########################################
 #			SOURCES	FILES				#
 #########################################
-SRCS = main.cpp 						\
-PmergeMe.cpp
+SRCS = 	main.cpp 		\
+		PmergeMe.cpp	\
+		\
 	
 SRC	= $(addprefix $(SRCS_DIR),$(SRCS))
 
