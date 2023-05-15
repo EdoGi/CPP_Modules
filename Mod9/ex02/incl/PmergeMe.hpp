@@ -6,7 +6,7 @@
 /*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:07:37 by giaco             #+#    #+#             */
-/*   Updated: 2023/05/14 20:07:24 by giaco            ###   ########.fr       */
+/*   Updated: 2023/05/15 00:15:47 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <iostream>
 # include <sstream>
 # include <sys/time.h>
-# include <unistd.h>
+# include <iomanip>
 
 # define SUCCESS 0
 # define FAILURE 1
@@ -28,18 +28,18 @@ class PmergeMe
 {
 	private:
 		
-		std::vector<int> John_vector;
-		std::deque<int> Lana_deque;
-		std::vector<int> unsorted;
-		double			DataMgt_time;
-		double			VecSort_time;
-		double			DeqSort_time;
+		std::vector<int> _John_vector;
+		std::deque<int> _Lana_deque;
+		std::vector<int> _unsorted;
+		double			_DataMgt_time;
+		double			_VecSort_time;
+		double			_DeqSort_time;
 		
 	public:
 	
 		PmergeMe();
 		PmergeMe(PmergeMe const & src);
-		PmergeMe(std::string num_list);
+		PmergeMe(char **av);
 		~PmergeMe();
 
 		PmergeMe & operator=( PmergeMe const & rhs );
@@ -51,11 +51,12 @@ class PmergeMe
 		std::vector<int> GetJohnVector() const;
 		std::deque<int> GetLanaDeque() const;
 		std::vector<int> GetUnsorted() const;
+		bool isSorted() const;
 };
 
 std::ostream & operator<<(std::ostream & os, PmergeMe const & link);
 
 void VecSort(std::vector<int> & JohnII);
-void DeqSort(std::deque<int> LanaII);
+void DeqSort(std::deque<int> & LanaII);
 
 #endif

@@ -6,33 +6,21 @@
 /*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:07:29 by giaco             #+#    #+#             */
-/*   Updated: 2023/05/14 20:25:29 by giaco            ###   ########.fr       */
+/*   Updated: 2023/05/15 00:12:47 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* 
-	TODO :
-
-	OK - Check ac == 2
-	OK - Parse av[1]
-	OK - Push in vector and in deque
-	OK - Start Merge insert sort algo in vector and in deque
-	- Add chrono for each part
-	- Display output
-*/
 
 #include "PmergeMe.hpp"
 
 void NumPrint(std::vector<int> *VtP, std::deque<int> *DtP, std::string message)
 {
 	std::cout << message;
-	(void) VtP;
 	if (VtP)
 	{
 		for (size_t i = 0; i < VtP->size(); i++)
 			std::cout << VtP->at(i) << ' ';
 	}
-	if (DtP)
+	else if (DtP)
 	{
 		for (size_t i = 0; i < DtP->size(); i++)
 			std::cout << DtP->at(i) << ' ';
@@ -72,7 +60,7 @@ void VecMerge(std::vector<int> & JohnJr, std::vector<int> & JohnJr1, std::vector
 			JohnJr.insert(JohnJr.end(), JohnJr1.begin(), JohnJr1.end());
 			break;
 		}
-		else if (JohnJr1.at(0) < JohnJr2.at(0))
+		else if (JohnJr1.front() < JohnJr2.at(0))
 		{
 			JohnJr[i] = JohnJr1[0];
 			JohnJr1.erase(JohnJr1.begin());
@@ -142,7 +130,7 @@ void DeqMerge(std::deque<int> & LanaJr, std::deque<int> & LanaJr1, std::deque<in
 	}
 }
 
-void DeqSort(std::deque<int> LanaJr)
+void DeqSort(std::deque<int> & LanaJr)
 {
 	if (LanaJr.size() > K)
 	{
@@ -151,7 +139,6 @@ void DeqSort(std::deque<int> LanaJr)
 		DeqSort(LanaJr1);
 		DeqSort(LanaJr2);
 		DeqMerge(LanaJr, LanaJr1, LanaJr2);
-		NumPrint(NULL, &LanaJr, "Finish is : ");
 	}
 	else
 		DeqInsert(LanaJr);
@@ -161,7 +148,7 @@ int	main(int ac, char **av)
 {
     timeval start_time, end_time;
     gettimeofday(&start_time, NULL);
-	if (ac != 2)
+	if (ac < 3)
 	{
 		std::cerr << "Error : correct usage is ./PmergeMe <string : list of numbers to sort>" << std::endl;
 		return FAILURE;
@@ -169,7 +156,7 @@ int	main(int ac, char **av)
 	
 	try
 	{
-		PmergeMe Jona(av[1]);
+		PmergeMe Jona(av);
   		gettimeofday(&end_time, NULL);
 		Jona.SetTime('m', start_time, end_time);
 		Jona.MerSertSort();
