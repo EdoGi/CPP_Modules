@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:07:37 by giaco             #+#    #+#             */
-/*   Updated: 2023/05/15 00:15:47 by giaco            ###   ########.fr       */
+/*   Updated: 2023/05/15 17:04:20 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <sstream>
 # include <sys/time.h>
 # include <iomanip>
+# include <limits.h>
 
 # define SUCCESS 0
 # define FAILURE 1
