@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egiacomi <egiacomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:41:47 by egiacomi          #+#    #+#             */
-/*   Updated: 2023/05/01 23:27:31 by giaco            ###   ########.fr       */
+/*   Updated: 2023/05/15 17:03:32 by egiacomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <iostream>
 // # include <iomanip>
 // # include <fstream>
+# include <cstdlib>
 # include <sstream>
 # include <cstring>
 // # include <ctime>
