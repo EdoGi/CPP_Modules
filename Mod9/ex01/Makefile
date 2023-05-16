@@ -6,7 +6,7 @@
 #    By: giaco <giaco@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 14:30:58 by giaco             #+#    #+#              #
-#    Updated: 2023/05/15 14:42:59 by giaco            ###   ########.fr        #
+#    Updated: 2023/05/16 10:45:16 by giaco            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OBJ_DIR = objs/
 #			FLAGS COMPILATION			#
 #########################################
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -MMD -MP
-CXXFLAGS += -g3 -fsanitize=address -Wno-unused
+# CXXFLAGS += -g3 -fsanitize=address -Wno-unused
 IFLAGS := -I include/
 
 #########################################

@@ -6,7 +6,7 @@
 /*   By: giaco <giaco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:21:13 by giaco             #+#    #+#             */
-/*   Updated: 2023/05/15 15:11:10 by giaco            ###   ########.fr       */
+/*   Updated: 2023/05/16 10:44:56 by giaco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	printBitVal(std::string const date, float const amount, BitcoinExchange con
 	{
 		CurrentMap.insert(std::pair<std::string, float>(date, 0));
 		it = CurrentMap.find(date);
+		if (it == CurrentMap.begin())
+		{
+			std::cerr << "Error: Couldn't find a rate related for : " << date << ".  This date is previous all our data." <<std::endl;
+			return ;
+		}
 		it--;
 	}
 	std::cout << date << " => " << amount << " = " << (amount * it->second) << std::endl;
@@ -84,6 +89,11 @@ bool	checkInput(std::string const & line, std::string & date, float & amount)
 	if (checkDate(date))
 		return FAILURE;
 	ss >> amount;
+	if (ss.fail())
+	{
+		std::cerr << "Error: Bad input, expected format : 'date | value'" << std::endl;
+		return FAILURE;
+	}	
 	if (checkAmount(amount))
 		return FAILURE;
 	return SUCCESS;
